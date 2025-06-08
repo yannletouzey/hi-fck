@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, #root {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+svg {
+  position: absolute;
+  top: 10%;
+  scale: 3;
+}
+.path {
+  stroke-dasharray: 187.64706420898438;
+  stroke-dashoffset: 187.64706420898438;
+}
+@keyframes strokeLetter {
+  from, to { stroke-dashoffset: 187.64706420898438; }
+  20%, 80% { stroke-dashoffset: 0; }
+}
+.path2 {
+  stroke-dasharray: 178.4119415283203;
+  stroke-dashoffset: 178.4119415283203;
+}
+@keyframes strokeLetter2 {
+  from, to { stroke-dashoffset: 178.4119415283203; }
+  20%, 80% { stroke-dashoffset: 0; }
+}
+.path3 {
+  stroke-dasharray: 86.273193359375;
+  stroke-dashoffset: 86.273193359375;
+}
+@keyframes strokeLetter3 {
+  from, to { stroke-dashoffset: 86.273193359375; }
+  20%, 80% { stroke-dashoffset: 0; }
+}
+.path4 {
+  stroke-dasharray: 118.72640991210938;
+  stroke-dashoffset: 118.72640991210938;
+}
+@keyframes strokeLetter4 {
+  from, to { stroke-dashoffset: 118.72640991210938; }
+  20%, 80% { stroke-dashoffset: 0; }
+}
+.path5 {
+  stroke-dasharray: 178.41188049316406;
+  stroke-dashoffset: 178.41188049316406;
+}
+@keyframes strokeLetter5 {
+  from, to { stroke-dashoffset: 178.41188049316406; }
+  20%, 80% { stroke-dashoffset: 0; }
+}
