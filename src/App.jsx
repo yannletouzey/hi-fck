@@ -2,27 +2,21 @@ import { HelloFuck } from './HelloFuck'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Click } from './Click'
-import { useEffect, useState } from 'react'
+import { useSoundEffect } from './useSound'
 
 function App() {
-
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('click', () => setClicked(true))
-    return () => window.removeEventListener('click', () => setClicked(true))
-  }, [])
+  const { isPlaying } = useSoundEffect()
 
   return (
     <>
       <Canvas>
         <color attach="background" args={["#333333"]} />
         <OrbitControls />
-        <HelloFuck setClicked={setClicked} />
+        <HelloFuck />
         <ambientLight intensity={0.5} />
         <hemisphereLight args={[0xffffff, 0x444444, 5]} />
       </Canvas>
-      {!clicked && <Click />}
+      {!isPlaying && <Click />}
     </>
   )
 }
