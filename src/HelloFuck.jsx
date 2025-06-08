@@ -8,10 +8,8 @@ import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
 import * as THREE from 'three'
-import { useSoundEffect } from './useSound'
 
 export function HelloFuck(props) {
-  const {playSound} = useSoundEffect()
   const group = useRef()
 
   const { scene, animations: rawAnimations } = useGLTF('/hello-fck.glb')
@@ -30,7 +28,6 @@ export function HelloFuck(props) {
   useEffect(() => {
     if (actions?.Fck) {
       actions.Fck.reset().fadeIn(0.2).play()
-      playSound()
     }
   }, [actions])
 

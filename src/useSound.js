@@ -18,30 +18,25 @@ export function useSoundEffect() {
     audio.addEventListener('ended', handleEnded)
     audio.addEventListener('error', handleError)
 
-    const unlockAudio = () => {
-      audio.play().catch(() => {})
-      window.removeEventListener('click', unlockAudio)
+    const handleClick = () => {
+      if (audio.paused) {
+        audio.loop = true
+        audio.play().catch((err) => {
+          console.warn('play() error :', err)
+        })
+      }
     }
 
-    window.addEventListener('click', unlockAudio)
+    window.addEventListener('click', handleClick, { once: true })
 
     return () => {
       audio.removeEventListener('playing', handlePlaying)
       audio.removeEventListener('pause', handlePause)
       audio.removeEventListener('ended', handleEnded)
       audio.removeEventListener('error', handleError)
-      window.removeEventListener('click', unlockAudio)
+      window.removeEventListener('click', handleClick)
     }
   }, [])
 
-  const playSound = () => {
-    const audio = audioRef.current
-    audio.currentTime = 0
-    audio.loop = true
-    audio.play().catch(err => {
-      console.warn('play() a échoué :', err)
-    })
-  }
-
-  return { playSound, isPlaying }
+  return { isPlaying }
 }

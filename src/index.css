@@ -17,7 +17,7 @@ body, #root {
 .text {
   position: absolute;
   top: 10%;
-  font-size: 50px;
+  font-size: 1rem;
   color: #fff;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -31,12 +31,12 @@ body, #root {
     scale: 3;
   }
   .path {
-    stroke-dasharray: 187.64706420898438;
-    stroke-dashoffset: 187.64706420898438;
+    /* stroke-dasharray: 187.64706420898438;
+    stroke-dashoffset: 187.64706420898438; */
   }
   @keyframes strokeLetter {
-    from, to { stroke-dashoffset: 187.64706420898438; }
-    20%, 80% { stroke-dashoffset: 0; }
+    /* from, to { stroke-dashoffset: 187.64706420898438; } */
+    100% { stroke-dashoffset: 0; }
   }
   .path2 {
     stroke-dasharray: 178.4119415283203;
