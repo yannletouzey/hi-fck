@@ -11,7 +11,9 @@ function App() {
     <>
       <Canvas>
         <color attach="background" args={["#333333"]} />
-        <OrbitControls />
+        <OrbitControls 
+          enableZoom={false} 
+        />
         <HelloFuck />
         <ambientLight intensity={0.5} />
         <hemisphereLight args={[0xffffff, 0x444444, 5]} />
