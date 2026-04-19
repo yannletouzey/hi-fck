@@ -21,3 +21,49 @@ body, #root {
   color: #fff;
   font-family: 'Courier New', Courier, monospace;
 }
+
+svg {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes drawCycleHelloText {
+  0%, 50%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  60% {
+    stroke-dashoffset: var(--stroke-length);
+    opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: var(--stroke-length);
+    opacity: 0;
+  }
+}
+.svgHello path {
+  stroke-width: 1;
+  animation: drawCycleHelloText 2s cubic-bezier(0.66, 0, 0.34, 1) infinite;
+  filter: url(#glow);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity 0.4s ease;
+}
+@keyframes fckText {
+  0%, 70%, 90%, 100% {
+    scale: 0;
+  }
+  75% {
+    scale: 1;
+  }
+  85% {
+    scale: 1;
+  }
+}
+.svgFck path {
+  stroke-width: 1;
+  animation: fckText 2s cubic-bezier(0.66, 0, 0.34, 1) infinite;
+  transform-origin: center;
+}
